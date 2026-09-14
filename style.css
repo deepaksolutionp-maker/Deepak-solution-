@@ -4,6 +4,12 @@ header{background:#ffcc33;display:flex;align-items:center;justify-content:space-
 header img{height:45px}
 nav a{margin:0 10px;text-decoration:none;color:#000;font-weight:600}
 nav a:hover{color:#003366}
+.menu-toggle{display:none;width:44px;height:44px;padding:10px;border:0;border-radius:8px;background:#003366;cursor:pointer}
+.menu-toggle span{display:block;height:3px;margin:4px 0;border-radius:2px;background:#fff;transition:transform .25s ease,opacity .2s ease}
+.menu-toggle:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.menu-toggle.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-toggle.is-open span:nth-child(2){opacity:0}
+.menu-toggle.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .notice{background:#003366;color:#fff;padding:6px;text-align:center}
 .hero{background:linear-gradient(90deg,#1e90ff,#ffcc33);padding:40px;text-align:center;color:#fff}
 .section{padding:30px}
@@ -17,3 +23,14 @@ footer{background:#ddd;padding:20px;text-align:center}
 .float a{display:block;margin-top:10px;padding:10px 14px;border-radius:50%;color:#fff;font-size:18px;text-align:center}
 .whatsapp{background:#25D366}
 .call{background:#1e90ff}
+@media (max-width: 760px){
+header{position:relative;padding:8px 14px}
+.menu-toggle{display:block}
+header nav{position:absolute;z-index:20;top:100%;right:12px;left:12px;display:grid;visibility:hidden;overflow:hidden;padding:8px;background:#fff;border-radius:0 0 12px 12px;box-shadow:0 12px 24px rgba(0,51,102,.18);opacity:0;transform:translateY(-8px);transition:transform .25s ease,opacity .2s ease,visibility .25s}
+header nav.is-open{visibility:visible;opacity:1;transform:translateY(0)}
+header nav a{margin:0;padding:13px 14px;border-bottom:1px solid #edf0f4;color:#1d2b39}
+header nav a:last-child{border-bottom:0}
+header nav a:hover,header nav a:focus-visible{background:#fff7dc;color:#003366;outline:0}
+.hero{padding:32px 18px}
+.section{padding:24px 16px}
+}
